@@ -7,8 +7,18 @@ body {
   color: hsl(0, 0%, 0%);
   font-weight: 800;
 }
-
-.small-para {
+/* 
+we als could have changed the position of 
+  .small-para {
+    font-size: 14px;
+    font-weight: 800;
+  } 
+since small-para also has the para class
+and the para class is defined last
+the para properties win over the small-para
+but if small-para is further down it is the winner
+*/
+.para.small-para { 
   font-size: 14px;
   font-weight: 800;
 }
@@ -17,7 +27,14 @@ body {
   font-size: 22px;
 }
 
-.confirm {
+
+/* 
+you could also do #confirm-button
+since it has the highest prio
+when it comes to specificity
+*/
+
+.button.confirm {
   background: green;
   color: white;
   font-weight: bold;
@@ -29,14 +46,19 @@ body {
   font-size: 20px;
 }
 
-.child {
-  color: rgb(0, 0, 0);
-  font-weight: 800;
-  font-size: 14px;
-}
-
 div.text {
   color: rgb(0, 0, 0);
   font-size: 22px;
   font-weight: 100;
 }
+
+div .child {
+  color: rgb(0, 0, 0);
+  font-weight: 800;
+  font-size: 14px;
+}
+
+/*
+changed the position to be under div.text
+so it has higher prio
+*/
